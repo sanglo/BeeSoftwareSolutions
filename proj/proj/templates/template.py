@@ -53,14 +53,14 @@ def menu_button() -> rx.Component:
                     menu_item_link(page["title"], page["route"])
                     for page in get_decorated_pages()
                 ],
-                rx.menu.separator(),
-                menu_item_link("About", "https://github.com/reflex-dev"),
-                menu_item_link("Contact", "mailto:founders@=reflex.dev"),
+                # rx.menu.separator(),
+              # menu_item_link("About", "https://github.com/reflex-dev"),
+             #   menu_item_link("Contact", "mailto:founders@=reflex.dev"),
             ),
         ),
         position="fixed",
         right="2em",
-        top="2em",
+        #top="2em",
         z_index="500",
     )
 

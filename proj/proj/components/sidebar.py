@@ -13,25 +13,12 @@ def sidebar_header() -> rx.Component:
     """
     return rx.hstack(
         # The logo.
-        rx.color_mode_cond(
-            rx.image(src="/reflex_black.svg", height="2em"),
-            rx.image(src="/reflex_white.svg", height="2em"),
-        ),
-        rx.spacer(),
-        rx.link(
-            rx.button(
-                rx.icon("github"),
-                color_scheme="gray",
-                variant="soft",
-            ),
-            href="https://github.com/reflex-dev/reflex",
-        ),
-        align="center",
+       # rx.image(src="proj/src/school_logo.png"),
+       # rx.spacer(),
+       # align="center",
         padding_x="1em",
         padding_y="1em",
     )
-
-
 
 
 def sidebar_item(text: str, url: str) -> rx.Component:
