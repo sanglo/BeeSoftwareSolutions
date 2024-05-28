@@ -74,7 +74,7 @@ def sidebar() -> rx.Component:
     # Get all the decorated pages and add them to the sidebar.
     from reflex.page import get_decorated_pages
     menu_items = [
-        {"title": "Home", "route": "/home"},
+        {"title": "Home", "route": "/"},
         {"title": "Magazyny", "route": "/magazyny"},
         {"title": "Raporty", "route": "/raporty"},
         {"title": "Rekrutacja", "route": "/rekrutacja"},
