@@ -39,7 +39,16 @@ def menu_button() -> rx.Component:
         The menu button component.
     """
     from reflex.page import get_decorated_pages
-
+    menu_items = [
+        {"title": "Home", "route": "/home"},
+        {"title": "Magazyny", "route": "/magazyny"},
+        {"title": "Raporty", "route": "/raporty"},
+        {"title": "Rekrutacja", "route": "/rekrutacja"},
+        {"title": "Sale", "route": "/sale"},
+        {"title": "Struktura Organizacyjna", "route": "/struktura"},
+        {"title": "Uczniowie", "route": "/uczniowie"},
+        {"title": "Ustawienia", "route": "/settings"},
+    ]
     return rx.box(
         rx.menu.root(
             rx.menu.trigger(
@@ -51,7 +60,7 @@ def menu_button() -> rx.Component:
             rx.menu.content(
                 *[
                     menu_item_link(page["title"], page["route"])
-                    for page in get_decorated_pages()
+                    for page in menu_items
                 ],
                 # rx.menu.separator(),
               # menu_item_link("About", "https://github.com/reflex-dev"),
