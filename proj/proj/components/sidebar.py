@@ -73,7 +73,16 @@ def sidebar() -> rx.Component:
     """
     # Get all the decorated pages and add them to the sidebar.
     from reflex.page import get_decorated_pages
-
+    menu_items = [
+        {"title": "Home", "route": "/"},
+        {"title": "Magazyny", "route": "/magazyny"},
+        {"title": "Raporty", "route": "/raporty"},
+        {"title": "Rekrutacja", "route": "/rekrutacja"},
+        {"title": "Sale", "route": "/sale"},
+        {"title": "Struktura Organizacyjna", "route": "/struktura"},
+        {"title": "Uczniowie", "route": "/uczniowie"},
+        {"title": "Ustawienia", "route": "/settings"},
+    ]
     return rx.box(
         rx.vstack(
             rx.hstack(
@@ -81,10 +90,10 @@ def sidebar() -> rx.Component:
                 rx.hstack(
                     *[
                         sidebar_item(
-                            text=page.get("title", page["route"].strip("/").capitalize()),
-                            url=page["route"],
+                            text=item["title"],
+                            url=item["route"],
                         )
-                        for page in get_decorated_pages()
+                        for item in menu_items
                     ],
                     align_items="center",
                     overflow_x="auto",
