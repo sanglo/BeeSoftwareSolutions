@@ -22,6 +22,7 @@ class UczniowieState(rx.State):
     students: List[StudentDict] = []
 
 
+
     def toggle_form(self):
         self.show_form = not self.show_form
 

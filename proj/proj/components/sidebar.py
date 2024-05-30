@@ -1,7 +1,7 @@
 """Sidebar component for the app."""
 
 from proj import styles
-
+#from proj.pages.Logowanie import logowanie_link
 import reflex as rx
 
 
@@ -82,6 +82,7 @@ def sidebar() -> rx.Component:
         {"title": "Struktura Organizacyjna", "route": "/struktura"},
         {"title": "Uczniowie", "route": "/uczniowie"},
         {"title": "Ustawienia", "route": "/settings"},
+       
     ]
     return rx.box(
         rx.vstack(
@@ -100,6 +101,13 @@ def sidebar() -> rx.Component:
                     padding_x="1em",
                 ),
                 rx.spacer(),
+                rx.box(
+                    sidebar_item(
+                        text="Zaloguj się",
+                        url="/logowanie",
+                    ),
+                    padding_right="7em"
+                ),
                 width="100%",
                 height="auto",
             ),
@@ -138,6 +146,7 @@ def layout() -> rx.Component:
     return rx.hstack(
         sidebar(),
         main_content(),
+    #    logowanie_link(),
         width="100%",
         align_items="stretch",
     )
