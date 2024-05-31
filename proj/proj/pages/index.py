@@ -8,7 +8,7 @@ import reflex as rx
 
 @template(route="/", title="Home")
 def index() -> rx.Component:
-    """The home page.
+    """The home page :) .
 
     Returns:
         The UI for the home page.
