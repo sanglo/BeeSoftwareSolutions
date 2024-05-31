@@ -13,11 +13,11 @@ def sidebar_header() -> rx.Component:
     """
     return rx.hstack(
         # The logo.
-       # rx.image(src="proj/src/school_logo.png"),
-       # rx.spacer(),
-       # align="center",
-        padding_x="1em",
-        padding_y="1em",
+        rx.image(src="/logo.png",width="60px", height="auto"),
+        rx.spacer(),
+        align="center",
+        padding_x="0em",
+        padding_y="0em",
     )
 
 
@@ -87,6 +87,8 @@ def sidebar() -> rx.Component:
     return rx.box(
         rx.vstack(
             rx.hstack(
+            
+            
                 sidebar_header(),
                 rx.hstack(
                     *[
