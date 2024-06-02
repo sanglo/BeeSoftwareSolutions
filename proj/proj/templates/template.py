@@ -132,6 +132,7 @@ def template(
                 align="start",
                 background=f"radial-gradient(circle at top right, {rx.color('accent', 2)}, {rx.color('mauve', 1)});",
                 position="relative",
+                padding_top = "1em",
             )
 
         @rx.page(
