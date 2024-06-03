@@ -5,6 +5,8 @@ from proj.state import RekrutacjeState
 @template(route="/rekrutacja", title="Rekrutacja")
 def rekrutacja() -> rx.Component:
     print('6')
+    error_style = {"color": "red", "font-weight": "bold"}
+    
     return rx.vstack(
         rx.heading("Rekrutacja", size="8", on_click=RekrutacjeState.get_jobs),
         rx.foreach(
@@ -28,33 +30,33 @@ def rekrutacja() -> rx.Component:
                     on_change=lambda e: RekrutacjeState.handle_change('title', e), 
                     style={"width": "40vw"}
                 ),
-                rx.cond(RekrutacjeState.errors.contains('title'), rx.text(RekrutacjeState.errors['title'])),
+                rx.cond(RekrutacjeState.errors.contains('title'), rx.text(RekrutacjeState.errors['title'], style=error_style)),
                 rx.input(
                     placeholder="Opis obowiązków", 
                     on_change=lambda e: RekrutacjeState.handle_change('description', e), 
                     textarea=True, 
                     style={"width": "40vw", "min-height": "50px", "resize": "vertical"}
                 ),
-                rx.cond(RekrutacjeState.errors.contains('description'), rx.text(RekrutacjeState.errors['description'])),
+                rx.cond(RekrutacjeState.errors.contains('description'), rx.text(RekrutacjeState.errors['description'], style=error_style)),
                 rx.input(
                     placeholder="Wymagania kwalifikacyjne", 
                     on_change=lambda e: RekrutacjeState.handle_change('qualifications', e), 
                     textarea=True, 
                     style={"width": "40vw", "min-height": "50px", "resize": "vertical"}
                 ),
-                rx.cond(RekrutacjeState.errors.contains('qualifications'), rx.text(RekrutacjeState.errors['qualifications'])),
+                rx.cond(RekrutacjeState.errors.contains('qualifications'), rx.text(RekrutacjeState.errors['qualifications'], style=error_style)),
                 rx.input(
                     placeholder="Lokalizacja", 
                     on_change=lambda e: RekrutacjeState.handle_change('location', e), 
                     style={"width": "40vw"}
                 ),
-                rx.cond(RekrutacjeState.errors.contains('location'), rx.text(RekrutacjeState.errors['location'])),
+                rx.cond(RekrutacjeState.errors.contains('location'), rx.text(RekrutacjeState.errors['location'], style=error_style)),
                 rx.input(
                     placeholder="Wynagrodzenie", 
                     on_change=lambda e: RekrutacjeState.handle_change('salary', e), 
                     style={"width": "40vw"}
                 ),
-                rx.cond(RekrutacjeState.errors.contains('salary'), rx.text(RekrutacjeState.errors['salary'])),
+                rx.cond(RekrutacjeState.errors.contains('salary'), rx.text(RekrutacjeState.errors['salary'], style=error_style)),
                 rx.button("Opublikuj", on_click=RekrutacjeState.submit_form),
             )
         )
